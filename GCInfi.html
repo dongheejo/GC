@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+<<<<<<< HEAD
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>방명록</title>
@@ -10,257 +11,300 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+=======
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>방명록</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+>>>>>>> 035145b6e547e809a120b62c0e253687fe5c5d1d
 </head>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-    </script>
+  integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+  </script>
 
 <style>
-    body {
-        background-color: #212529;
+  body {
+    background-color: #212529;
+  }
+
+  .btnfade:hover {
+    background: #30363d;
+    border-radius: 15px;
+  }
+
+  #staticBackdrop {
+    text-align: left;
+  }
+
+  .btn {
+    border-radius: 10px;
+  }
+
+  img {
+    filter: opacity(.5) drop-shadow(0 0 0 white);
+    filter: invert(100%) sepia(19%) saturate(0%) hue-rotate(204deg) brightness(104%) contrast(106%);
+
+  }
+
+
+  .GCmain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+    margin: auto auto 20px auto;
+    width: 1300px;
+    height: 350px;
+    border-radius: 20px;
+
+
+
+    background-image: url(https://martech.org/wp-content/uploads/2016/10/right-left-brain-genius-ss-1920.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+
+  .comments {
+    width: 1300px;
+    justify-content: center;
+    text-align: center;
+  }
+
+
+  body {
+    padding: 1.5em;
+    background: #212529
+  }
+
+  table {
+    border: 1px #a39485 solid;
+    font-size: .9em;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .25);
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+  th {
+    text-align: center;
+  }
+
+  thead {
+    font-weight: bold;
+    color: #fff;
+    background: #6c757d;
+  }
+
+  td,
+  th {
+    padding: 1em .5em;
+    vertical-align: middle;
+  }
+
+  td {
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    background: #fff;
+  }
+
+  a {
+    color: #73685d;
+  }
+
+  @media all and (max-width: 768px) {
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+      display: block;
     }
 
-    .btnfade:hover {
-        background: #30363d;
-        border-radius: 15px;
-    }
-
-    #staticBackdrop {
-        text-align: left;
-    }
-
-    .btn {
-        border-radius: 10px;
-    }
-
-    img {
-        filter: opacity(.5) drop-shadow(0 0 0 white);
-        filter: invert(100%) sepia(19%) saturate(0%) hue-rotate(204deg) brightness(104%) contrast(106%);
-
-    }
-
-
-    .GCmain {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-
-        margin: auto auto 20px auto;
-        width: 1300px;
-        height: 350px;
-        border-radius: 20px;
-
-
-
-        background-image: url(https://martech.org/wp-content/uploads/2016/10/right-left-brain-genius-ss-1920.jpg);
-        background-position: center;
-        background-size: cover;
-    }
-
-    .comments {
-        width: 1300px;
-        justify-content: center;
-        text-align: center;
-
-    }
-
-
-    body {
-        padding: 1.5em;
-        background: #212529
+    th {
+      text-align: center;
     }
 
     table {
-        border: 1px #a39485 solid;
-        font-size: .9em;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, .25);
-        width: 100%;
-        border-collapse: collapse;
-        border-radius: 15px;
-        overflow: hidden;
-    }
-
-    th {
-        text-align: center;
+      position: relative;
+      padding-bottom: 0;
+      border: none;
+      box-shadow: 0 0 10px rgba(0, 0, 0, .2);
     }
 
     thead {
-        font-weight: bold;
-        color: #fff;
-        background: #6c757d;
+      float: center;
+      white-space: nowrap;
     }
 
-    td,
+    .tbody {
+      overflow-x: auto;
+      overflow-y: hidden;
+      position: relative;
+      white-space: nowrap;
+      text-align: center;
+    }
+
+    #tbody {
+      text-align: center;
+    }
+
+    tr {
+      display: inline-block;
+      vertical-align: top;
+    }
+
     th {
-        padding: 1em .5em;
-        vertical-align: middle;
+      border-bottom: 1px solid #a39485;
     }
 
     td {
-        border-bottom: 1px solid rgba(0, 0, 0, .1);
-        background: #fff;
+      border-bottom: 1px solid #e5e5e5;
+      text-align: center;
     }
 
-    a {
-        color: #73685d;
-    }
 
-    @media all and (max-width: 768px) {
-
-        table,
-        thead,
-        tbody,
-        th,
-        td,
-        tr {
-            display: block;
-        }
-
-        th {
-            text-align: center;
-        }
-
-        table {
-            position: relative;
-            padding-bottom: 0;
-            border: none;
-            box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-        }
-
-        thead {
-            float: center;
-            white-space: nowrap;
-        }
-
-        .tbody {
-            overflow-x: auto;
-            overflow-y: hidden;
-            position: relative;
-            white-space: nowrap;
-            text-align: center;
-        }
-
-        #tbody {
-            text-align: center;
-        }
-
-        tr {
-            display: inline-block;
-            vertical-align: top;
-        }
-
-        th {
-            border-bottom: 1px solid #a39485;
-        }
-
-        td {
-            border-bottom: 1px solid #e5e5e5;
-            text-align: center;
-        }
-
-
-    }
+  }
 </style>
-<script>
-    function makecmt(mode) {
-        var form = document.notice_form;
-        if (!form.title.value) {
-            $("#title").addClass("on");
-        } else if (!form.content.value) {
-            alert("글의 내용을 입력해주세요.");
-        }
-    }
+<script type="module">
+
+  // Firebase SDK 라이브러리 가져오기
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+  import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+  import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+  import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCUXzqnsVE1H3SGw0F369wWQUoo5QoxVdM",
+    authDomain: "gico-5304c.firebaseapp.com",
+    projectId: "gico-5304c",
+    storageBucket: "gico-5304c.appspot.com",
+    messagingSenderId: "212390154592",
+    appId: "1:212390154592:web:fd3a1ec1773ef33dd84e05"
+  };
+
+  // Firebase 인스턴스 초기화
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  $("#postingbtn").click(async function () {
+    let today = new Date();
+    let inputname = $('#inputname').val();
+    let inputcomment = $('#inputcomment').val();
+
+    let doc = {
+      'date': date,
+      'inputname': inputname,
+      'inputcomment': inputcomment
+    };
+
+    await addDoc(collection(db, "board"), doc);
+    alert('저장 완료');
+    window.location.reload();
+  })
+
+  let docs = await getDocs(collection(db, "board"));
+  docs.forEach((doc) => {
+    let row = doc.data();
+
+    let date = row['date'];
+    let inputname = row['inputname'];
+    let inputcomment = row['inputcomment'];
+    let temp_html = `          
+    <tr>
+            <td>${date}</td>
+            <td>${inputname}</td>
+            <td>${inputcomment}</td>
+    </tr>`;
+    $('#tbody').append(temp_html);
+  });
 </script>
 
 <body>
-    <div class="container">
-        <header class="p-3 text-bg-dark">
-            <div class="container">
-                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                    <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                        <img src="catlogo.png" style="width: 60px; height: 60px;" />
-                    </a>
+  <div class="container">
+    <header class="p-3 text-bg-dark">
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+          <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+            <img src="catlogo.png" style="width: 60px; height: 60px;" />
+          </a>
 
-                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li><a href="GCHome.html" class="btnfade nav-link px-2 text-secondary">Genius Coding</a></li>
-                        <li><a href="GCInfi.html" class="btnfade nav-link px-2 text-white">방명록</a></li>
-                    </ul>
+          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="GCHome.html" class="btnfade nav-link px-2 text-secondary">Genius Coding</a></li>
+            <li><a href="GCInfi.html" class="btnfade nav-link px-2 text-white">방명록</a></li>
+          </ul>
 
 
-                    <div class="text-end">
-                        <button type="button" class="btn btn-outline-light me-2" data-bs-toggle="modal"
-                            data-bs-target="#staticBackdrop">방명록 남기기</button>
-
-                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-                            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="staticBackdropLabel">방명록</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div>
-                                            <script>
-                                                date = new Date().toLocaleDateString();
-                                                document.write(date);
-                                            </script>
-                                        </div>
-                                        <form>
-                                            <div class="mb-3">
-                                                <label for="recipient-name" class="col-form-label">이름:</label>
-                                                <textarea class="form-control" name="inputname"
-                                                    id="inputname"></textarea>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="message-text" class="col-form-label">코멘트:</label>
-                                                <textarea class="form-control" name="inputcomment"
-                                                    id="inputcomment"></textarea>
-                                            </div>
-                                        </form>
-
-                                    </div>
-                                    <div class="modal-footer">
-                                        <input type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal"
-                                            value="닫기">
-                                        <input type="submit" onclick="makecmt()" class="btn btn-dark" value="기록">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+          <div class="text-end">
+            <button type="button" class="btn btn-outline-light me-2" data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop">방명록 남기기</button>
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+              aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">방명록</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div id="date">
+                      <script>
+                        date = new Date().toLocaleDateString();
+                        document.write(date);
+                      </script>
                     </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">이름:</label>
+                      <textarea class="form-control" name="inputname" id="inputname"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">코멘트:</label>
+                      <textarea class="form-control" name="inputcomment" id="inputcomment"></textarea>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">닫기</button>
+                    <button id="postingbtn" type="button" class="btn btn-dark">기록</button>
+                  </div>
                 </div>
+              </div>
             </div>
-        </header>
-
-        <div class="GCmain">
-            <div class="container-fluid py-5">
-                <h1 class="display-4 fw-bold">지-코</h1>
-                <p class="col-md-8 fs-4">Genius-Coding</p>
-            </div>
+          </div>
         </div>
-        <!-- <p class="card-title"></p> css로 한 번에 바꾸기 위해서 존재하는 게 좋을까나?? <button>내용</button>-->
-        <div class="comments">
-            <table>
-                <thead>
+      </div>
+    </header>
 
-                    <tr>
-                        <th>Date</th>
-                        <th>Name</th>
-                        <th>Comment</th>
-                    </tr>
-                </thead>
-                <tbody id="tbody">
-                    <tr>
-                        <td>2023-11-30</td>
-                        <td>이시원</td>
-                        <td>팀원분들 모두 수고 많으셨습니다!!</td>
+    <div class="GCmain">
+      <div class="container-fluid py-5">
+        <h1 class="display-4 fw-bold">지-코</h1>
+        <p class="col-md-8 fs-4">Genius-Coding</p>
+      </div>
+    </div>
+    <!-- <p class="card-title"></p> css로 한 번에 바꾸기 위해서 존재하는 게 좋을까나?? <button>내용</button>-->
+    <div class="comments">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+      </table>
+    </div>
 
+<<<<<<< HEAD
 
                     </tr>
                     <tr>
@@ -273,6 +317,8 @@
             </table>
         </div>
 
+=======
+>>>>>>> 035145b6e547e809a120b62c0e253687fe5c5d1d
 </body>
 
 </html>
