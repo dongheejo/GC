@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조동희</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Dongle&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@300&family=Sunflower:wght@700&display=swap');
+
+        body {
+            background-color: rgb(183, 240, 177);
+        }
+
+        .GCheader {
+            background-color: white;
+        }
+
+        .main {
+            width: 1500px;
+            height: 500px;
+
+            margin: 30px auto auto auto;
+        }
+
+        .profile {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: start;
+        }
+
+        .photo {
+            background-color: white;
+            width: 400px;
+            height: 600px;
+            margin-left: 50px;
+            margin-top: 100px;
+            border-radius: 20px;
+
+            background-image: url(https://img1.daumcdn.net/thumb/C360x360/?scode=mtistory2&fname=https%3A%2F%2Ftistory1.daumcdn.net%2Ftistory%2F6479651%2Fattach%2Fb7a98818837e47b9a221519d0404f8fb);
+            background-position: center;
+            background-size: cover;
+        }
+
+        .hello {
+            color: black;
+            width: 1400px;
+
+            font-family: 'Sunflower', sans-serif;
+            margin: 150px auto auto auto;
+        }
+
+        .me {
+            font-family: 'Sunflower', sans-serif;
+            height: 450px;
+            margin-left: 30px;
+        }
+
+        .mytmi {
+            color: black;
+            font-family: 'Sunflower', sans-serif;
+            width: 1400px;
+            height: 400px;
+            margin: 50px auto auto auto;
+        }
+
+        .cards {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            width: 1400px;
+            height: 600px;
+        }
+
+        .mydog1 {
+            background-color: black;
+            width: 350px;
+            height: 300px;
+            margin: auto 50px auto 50px;
+            border-radius: 10px;
+            background-image: url(https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbUveDy%2FbtsA7BYME43%2FXSCMywfi8VvVkXTm7Ka1Uk%2Fimg.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+
+        .mydog2 {
+            background-color: black;
+            width: 350px;
+            height: 300px;
+            margin: auto 50px auto 50px;
+            border-radius: 10px;
+            background-image: url(https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fcjem28%2FbtsA7uSQriM%2FKUIDVTPNT1bwqKEavrFgBk%2Fimg.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+
+        .catname1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 350px;
+            margin: auto 50px auto 50px;
+            text-align: center;
+        }
+
+        .Question {
+            Color: rgb(68, 68, 255);
+            font-size: 35px;
+            line-height: 50px;
+        }
+
+        .Answer {
+            color: white;
+            font-size: 20px;
+            line-height: 10px;
+        }
+        .tmibtn {
+            width: 130px;
+            height: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 200px auto 100px auto;
+        }
+
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('#tmi').hide()
+        })
+         
+
+        function tmiopen() {
+            $('#tmi').toggle();
+        }
+    </script>
+</head>
+
+<body>
+    <div class="GCheader">
+        <header class="d-flex justify-content-center py-3">
+            <ul class="nav nav-pills">
+                <button type="button" class="btn btn-outline-primary" onclick="document.location.href='../mini project/GChome.html'">Home</button>
+                <button type="button" class="btn btn-outline-primary">방명록</button>
+            </ul>
+        </header>
+    </div>
+    <div class="hello">
+        <p style="font-size:70px">안녕하세요! 저는 조동희에요!</p>
+    </div>
+    <div class="main">
+        <div class="profile">
+            <div class="photo"> </div>
+            <div class="me">
+                <p class="Question">MBTI</p>
+                <p class="Answer">ISTJ</p>
+                <p class="Question">나의장점</p>
+                <p class="Answer">계획 세우길 좋아한다.</p>
+                <p class="Question">협업스타일</p>
+                <p class="Answer">열심히 합니다.</p>
+                <p class="Question">나의목표</p>
+                <p class="Answer">열심히 배워서 취업하고 풀스택 개발자로 성장하고 싶습니다!</p>
+                <p class="Question">나의약속</p>
+                <p class="Answer">복습을 반드시 하고 기본적으로 개인학습이기에 모르는 것도 찾아보며 공부하겠습니다!</p>
+                <p class="Question">블로그주소</p>
+                <p class="Answer">https://hjk8106.tistory.com/</p>
+            </div>
+        </div>
+    </div>
+    <div class="tmibtn">
+        <button type="button" class="btn btn-dark btn-lg" onclick="tmiopen()">나의 TMI</button>
+    </div>
+    <div class="mytmi" id="tmi">
+        <p style="font-size:60px">시골에 시고르자브종 2마리와 함께해요.</p>
+        <div class="cards">
+            <div class="catname1" style="font-size:30px">
+                <div class="mydog1"></div>
+                <p>장미(짱미)</p>
+                <p>늘 자유를 꿈구는 짱미입니다. 다시 돌아오기는 해요.</p>
+            </div>
+            <div class="catname1" style="font-size:30px">
+                <div class="mydog2"> </div>
+                <p>일월</p>
+                <p>올 해 1월 1일에 태어났어요! 놀랍게도 장미 딸이랍니다.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
