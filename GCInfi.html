@@ -64,7 +64,7 @@
     width: 1300px;
     justify-content: center;
     text-align: center;
- 
+
   }
 
 
@@ -164,19 +164,65 @@
 
   }
 </style>
-<script>
-    function makecmt(mode) {
-        var form = document.notice_form;
-        if(!form.title.value) {
-            $("#title").addClass("on");
-        } else if(!form.content.value) {
-            alert("글의 내용을 입력해주세요.");
-        }
-    }
+<script type="module">
+
+  // Firebase SDK 라이브러리 가져오기
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+  import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+  import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+  import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCUXzqnsVE1H3SGw0F369wWQUoo5QoxVdM",
+    authDomain: "gico-5304c.firebaseapp.com",
+    projectId: "gico-5304c",
+    storageBucket: "gico-5304c.appspot.com",
+    messagingSenderId: "212390154592",
+    appId: "1:212390154592:web:fd3a1ec1773ef33dd84e05"
+  };
+
+  // Firebase 인스턴스 초기화
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  $("#postingbtn").click(async function () {
+    let today = new Date();
+    let inputname = $('#inputname').val();
+    let inputcomment = $('#inputcomment').val();
+
+    let doc = {
+      'date': date,
+      'inputname': inputname,
+      'inputcomment': inputcomment
+    };
+
+    await addDoc(collection(db, "board"), doc);
+    alert('저장 완료');
+    window.location.reload();
+  })
+
+  let docs = await getDocs(collection(db, "board"));
+  docs.forEach((doc) => {
+    let row = doc.data();
+    
+    let date = row['date'];
+    let inputname = row['inputname'];
+    let inputcomment = row['inputcomment'];
+
+    let temp_html = `          
+    <tr>
+            <td>${date}</td>
+            <td>${inputname}</td>
+            <td>${inputcomment}</td>
+</tr>`;
+    $('#tbody').append(temp_html);
+  });
+
 </script>
 
 <body>
-  
+
   <div class="container">
     <header class="p-3 text-bg-dark">
       <div class="container">
@@ -195,44 +241,41 @@
             <button type="button" class="btn btn-outline-light me-2" data-bs-toggle="modal"
               data-bs-target="#staticBackdrop">방명록 남기기</button>
 
-              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-          aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">방명록</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <div>
-                  <script>
-                      date = new Date().toLocaleDateString();
-                      document.write(date);
-                  </script>
-              </div>
-                <form>
-                  <div class="mb-3">
-                    <label for="recipient-name" class="col-form-label">이름:</label>
-                    <textarea class="form-control" name="inputname"id="inputname"></textarea>
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+              aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">방명록</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
-                  <div class="mb-3">
-                    <label for="message-text" class="col-form-label">코멘트:</label>
-                    <textarea class="form-control" name="inputcomment" id="inputcomment"></textarea>
-                  </div>
-                </form>
+                  <div class="modal-body">
+                    <div id="date">
+                      <script >
+                        date = new Date().toLocaleDateString();
+                        document.write(date);
+                      </script>
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">이름:</label>
+                      <textarea class="form-control" name="inputname" id="inputname"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">코멘트:</label>
+                      <textarea class="form-control" name="inputcomment" id="inputcomment"></textarea>
+                    </div>
 
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">닫기</button>
+                    <button id="postingbtn" type="button" class="btn btn-dark">기록</button>
+                  </div>
+                </div>
               </div>
-              <div class="modal-footer">
-                <input type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal" value="닫기">
-                <input type="submit" onclick="makecmt()" class="btn btn-dark" value="기록">
-              </div>
+
             </div>
           </div>
         </div>
-
-          </div>
-        </div>
-      </div>
     </header>
 
     <div class="GCmain">
@@ -242,12 +285,12 @@
       </div>
     </div>
 
-   
+
     <!-- <p class="card-title"></p> css로 한 번에 바꾸기 위해서 존재하는 게 좋을까나?? <button>내용</button>-->
     <div class="comments">
       <table>
         <thead>
-        
+
           <tr>
             <th>Date</th>
             <th>Name</th>
@@ -255,18 +298,7 @@
           </tr>
         </thead>
         <tbody id="tbody">
-          <tr>
-            <td>2023-11-30</td>
-            <td>이름</td>
-            <td>코오오오오오오메에에에에엔트으으으으으으으</td>
 
-
-          </tr>
-          <tr>
-            <td>2023-11-30</td>
-            <td>이이름</td>
-            <td>코오ㅗ오ㅗ오ㅗ오오ㅗ오ㅗ오ㅗ오오오오멘트</td>
-          </tr>
 
         </tbody>
       </table>
