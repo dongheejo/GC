@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강군호</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Dongle&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@300&family=Sunflower:wght@700&display=swap');
+
+        body {
+            background-color: #212529;
+        }
+
+        #cat {
+            filter: opacity(.5) drop-shadow(0 0 0 white);
+            filter: invert(100%) sepia(19%) saturate(0%) hue-rotate(204deg) brightness(104%) contrast(106%);
+        }
+
+
+        .GCheader {
+            background-color: #212529;
+        }
+
+        .main {
+            width: 1500px;
+            height: 500px;
+
+            margin: 30px auto auto auto;
+        }
+
+        .profile {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: start;
+        }
+
+        .photo {
+            background-color: white;
+            width: 400px;
+            height: 600px;
+            margin-left: 50px;
+            margin-top: 100px;
+            border-radius: 20px;
+
+            background-image: url(https://i.imgur.com/lsloRDw.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+
+        .hello {
+            color: white;
+            width: 1400px;
+
+            font-family: 'Sunflower', sans-serif;
+            margin: auto auto auto auto;
+        }
+
+        .me {
+            font-family: 'Sunflower', sans-serif;
+            height: 450px;
+            margin-left: 30px;
+        }
+
+        .mytmi {
+            color:white;
+            font-family: 'Sunflower', sans-serif;
+            width: 1400px;
+            height: 400px;
+            margin: 50px auto auto auto;
+        }
+
+        .cards {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            width: 1400px;
+            height: 600px;
+        }
+
+        .Question {
+            Color: rgb(68, 68, 255);
+            font-size: 35px;
+            line-height: 50px;
+        }
+
+        .Answer {
+            color: white;
+            font-size: 20px;
+            line-height: 10px;
+        }
+        .tmibtn {
+            width: 130px;
+            height: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 200px auto 100px auto;
+        }
+
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('#tmi').hide()
+        })
+         
+
+        function tmiopen() {
+            $('#tmi').toggle();
+        }
+    </script>
+</head>
+
+<body>
+    <div class="GCheader">
+        <header class="p-3 bg-dark text-white">
+            <div class="container">
+              <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                  <img id="cat" src="catlogo.png" style="width: 60px; height: 60px;"/>
+                </a>
+        
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                  <li><a href="GCHome.html" class="btnfade nav-link px-2 text-white" >Genius Coding</a></li>
+                  <li><a href="GCInfi.html" class="btnfade nav-link px-2 text-secondary" >방명록</a></li>
+                </ul>
+              </div>
+            </div>
+          </header>
+    </div>
+    <div class="hello">
+        <p style="font-size:70px">안녕하세요! 저는 강군호입니다!</p>
+    </div>
+    <div class="main">
+        <div class="profile">
+            <div class="photo"> </div>
+            <div class="me">
+                <p class="Question">MBTI</p>
+                <p class="Answer">INFP</p>
+                <p class="Question">나의장점</p>
+                <p class="Answer">책임감이 있다.</p>
+                <p class="Question">협업스타일</p>
+                <p class="Answer">다른 팀원의 선택을 존중하고, 맡은 일 뿐만 아니라 모두의 일을 내 일처럼 함</p>
+                <p class="Question">나의목표</p>
+                <p class="Answer">누구보다 성실하고 꾸준한 개발자가 되기</p>
+                <p class="Question">나의약속</p>
+                <p class="Answer">항상 꾸준함을 지키자</p>
+                <p class="Question">블로그주소</p>
+                <p class="Answer">https://velog.io/@koon6756/</p>
+            </div>
+        </div>
+    </div>
+    <div class="tmibtn">
+        <button type="button" class="btn btn-outline-light" onclick="tmiopen()">나의 TMI</button>
+    </div>
+    <div class="mytmi" id="tmi">
+        <p style="font-size:60px">TMI) 저는 음악을 매우 좋아합니다.</p>
+        <p style="font-size:30px">직접 연주하는 것도 좋아하고, 듣는 것도 좋아해서 공연도 많이 다닙니다. 연주할 수 있는 악기도 많고, 락, 재즈, 힙합, 팝, 클래식 등 장르를 가리지 않고 모두 좋아합니다.</p>
+        
+    </div>
+
+</body>
+
+</html>
