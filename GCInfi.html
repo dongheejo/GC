@@ -64,7 +64,6 @@
     width: 1300px;
     justify-content: center;
     text-align: center;
-
   }
 
 
@@ -205,24 +204,21 @@
   let docs = await getDocs(collection(db, "board"));
   docs.forEach((doc) => {
     let row = doc.data();
-    
+
     let date = row['date'];
     let inputname = row['inputname'];
     let inputcomment = row['inputcomment'];
-
     let temp_html = `          
     <tr>
             <td>${date}</td>
             <td>${inputname}</td>
             <td>${inputcomment}</td>
-</tr>`;
+    </tr>`;
     $('#tbody').append(temp_html);
   });
-
 </script>
 
 <body>
-
   <div class="container">
     <header class="p-3 text-bg-dark">
       <div class="container">
@@ -240,7 +236,6 @@
           <div class="text-end">
             <button type="button" class="btn btn-outline-light me-2" data-bs-toggle="modal"
               data-bs-target="#staticBackdrop">방명록 남기기</button>
-
             <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
               aria-labelledby="staticBackdropLabel" aria-hidden="true">
               <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg">
@@ -251,7 +246,7 @@
                   </div>
                   <div class="modal-body">
                     <div id="date">
-                      <script >
+                      <script>
                         date = new Date().toLocaleDateString();
                         document.write(date);
                       </script>
@@ -264,7 +259,6 @@
                       <label for="message-text" class="col-form-label">코멘트:</label>
                       <textarea class="form-control" name="inputcomment" id="inputcomment"></textarea>
                     </div>
-
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">닫기</button>
@@ -272,10 +266,10 @@
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
+      </div>
     </header>
 
     <div class="GCmain">
@@ -284,13 +278,10 @@
         <p class="col-md-8 fs-4">Genius-Coding</p>
       </div>
     </div>
-
-
     <!-- <p class="card-title"></p> css로 한 번에 바꾸기 위해서 존재하는 게 좋을까나?? <button>내용</button>-->
     <div class="comments">
       <table>
         <thead>
-
           <tr>
             <th>Date</th>
             <th>Name</th>
@@ -298,8 +289,6 @@
           </tr>
         </thead>
         <tbody id="tbody">
-
-
         </tbody>
       </table>
     </div>
