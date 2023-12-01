@@ -203,12 +203,12 @@
   const db = getFirestore(app);
 
   $("#postingbtn").click(async function () {
-    let today = new Date();
+    let date = new Date();
     let inputname = $('#inputname').val();
     let inputcomment = $('#inputcomment').val();
 
     let doc = {
-      'date': today,
+      'date': date,
       'inputname': inputname,
       'inputcomment': inputcomment
     };
