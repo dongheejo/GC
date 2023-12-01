@@ -183,7 +183,7 @@
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
   import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
   import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-  import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+  import { getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
 
   const firebaseConfig = {
@@ -215,7 +215,8 @@
     window.location.reload();
   })
 
-  let docs = await getDocs(collection(db, "board"));
+  let q = query(collection(db, "board"),orderBy("date","desc"));
+let docs = await getDocs(q);
   docs.forEach((doc) => {
     let row = doc.data();
 
