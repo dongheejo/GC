@@ -208,7 +208,7 @@
     let inputcomment = $('#inputcomment').val();
 
     let doc = {
-      'date': date,
+      'date': today,
       'inputname': inputname,
       'inputcomment': inputcomment
     };
@@ -265,9 +265,8 @@
                   <div class="modal-body">
                     <div id="date">
                       <script>
-                        let today = new Date();
-                        document.write(today.toLocaleDateString());
-                        document.write(today.toLocaleTimeString());
+                        date = new Date().toLocaleDateString();
+                        document.write(date);
                       </script>
                     </div>
                     <div class="mb-3">
