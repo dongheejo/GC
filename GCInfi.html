@@ -118,12 +118,15 @@
     tr {
       display: block;
     }
+
     .dt {
       width: 300px;
     }
+
     .nm {
       width: 200px
     }
+
     .cm {
       width: 500px
     }
@@ -215,8 +218,8 @@
     window.location.reload();
   })
 
-  let q = query(collection(db, "board"),orderBy("date","desc"));
-let docs = await getDocs(q);
+  let q = query(collection(db, "board"), orderBy("date", "desc"));
+  let docs = await getDocs(q);
   docs.forEach((doc) => {
     let row = doc.data();
 
@@ -262,8 +265,9 @@ let docs = await getDocs(q);
                   <div class="modal-body">
                     <div id="date">
                       <script>
-                        date = new Date().toLocaleDateString();
-                        document.write(date);
+                        let today = new Date();
+                        document.write(today.toLocaleDateString());
+                        document.write(today.toLocaleTimeString());
                       </script>
                     </div>
                     <div class="mb-3">
